@@ -55,8 +55,9 @@ public class Aluno {
     }
 
     public Aluno setAnoDeNascimento(int anoDeNascimento) {
+        LocalDate dataAtual = LocalDate.now();
         try {
-            if (anoDeNascimento >= 1945 && anoDeNascimento <= 2025) {
+            if (anoDeNascimento >= 1945 && anoDeNascimento <= dataAtual.getYear()) {
                 this.anoDeNascimento = anoDeNascimento;
             } else {
                 JOptionPane.showMessageDialog(null, "Você digitou um ano de nascimento muito antigo ou inexistente!", "Mensagem de erro!", JOptionPane.ERROR_MESSAGE);
