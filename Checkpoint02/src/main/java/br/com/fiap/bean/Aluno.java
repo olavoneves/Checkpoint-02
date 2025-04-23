@@ -22,11 +22,6 @@ public class Aluno {
         this.anoDeNascimento = anoDeNascimento;
     }
 
-    public int calcularIdade(LocalDate dataAtual) {
-        int ano = dataAtual.getYear();
-        return ano - anoDeNascimento;
-    }
-
     public int getRegistroMatricula() {
         return registroMatricula;
     }
@@ -72,5 +67,10 @@ public class Aluno {
             throw new RuntimeException(e.getMessage());
         }
         return this;
+    }
+
+    public int calcularIdade(LocalDate dataAtual) {
+        int ano = dataAtual.getYear();
+        return ano - anoDeNascimento;
     }
 }
