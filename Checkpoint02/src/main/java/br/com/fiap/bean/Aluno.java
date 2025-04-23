@@ -17,9 +17,9 @@ public class Aluno {
     }
 
     public Aluno(int registroMatricula, String nomeCompleto, int anoDeNascimento) {
-        this.registroMatricula = registroMatricula;
+        setRegistroMatricula(registroMatricula);
         this.nomeCompleto = nomeCompleto;
-        this.anoDeNascimento = anoDeNascimento;
+        setAnoDeNascimento(anoDeNascimento);
     }
 
     public int getRegistroMatricula() {
@@ -62,7 +62,7 @@ public class Aluno {
             } else {
                 JOptionPane.showMessageDialog(null, "Você digitou um ano de nascimento muito antigo ou inexistente!", "Mensagem de erro!", JOptionPane.ERROR_MESSAGE);
                 JOptionPane.showMessageDialog(null, "Programa Finalizado!", "ATENÇÃO", JOptionPane.INFORMATION_MESSAGE);
-                throw new RuntimeException();
+                throw new Exception("Valor inválido! 1945 - Ano Atual");
             }
         } catch (Exception e) {
             throw new RuntimeException(e.getMessage());
